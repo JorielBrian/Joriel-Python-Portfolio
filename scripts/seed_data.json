@@ -1,0 +1,872 @@
+{
+  "projects": [
+    {
+      "name": "Digital Blast - Business Website",
+      "image": "/Projects/digital_blast.png",
+      "link": "https://digitalblast.com.au/",
+      "description": "Developed and launched the official business website for Digital Blast using WordPress, hosted on Hostinger. Implemented a clean, responsive layout aligned with the brand, optimized site performance, and configured essential plugins to support production deployment.",
+      "skills": [
+        "WordPress",
+        "Elementor",
+        "Hostinger",
+        "PHP",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "name": "Hills of Glory - Web Application",
+      "image": "/Projects/hog_site.png",
+      "link": "https://hillsofglory-mabalacat.vercel.app/",
+      "description": "Redeveloping a management system from a Laravel prototype to a modern full-stack architecture using Next.js, TypeScript, and PostgreSQL. Building admin dashboards, workflows, and scalable database structures. Implementing authentication and backend logic with Auth.js and Drizzle ORM. Deploying and managing the application on Vercel with PostgreSQL (Neon), while collaborating with church leaders to refine system requirements",
+      "skills": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Auth.js",
+        "Drizzle ORM",
+        "Neon",
+        "Laravel",
+        "Eloquent",
+        "Livewire",
+        "Flux UI",
+        "PHP",
+        "Canva"
+      ]
+    },
+    {
+      "name": "Mini HCM Time Tracking System",
+      "image": "/Projects/time_tracking.png",
+      "link": "https://mini-hcm-time-tracking.vercel.app",
+      "description": "Project for Cornerstone Assessment. Developed a mini HCM Time Tracking System using Next.js, TypeScript, Firebase, and Tailwind CSS. Implemented user authentication, time tracking features, and a responsive UI to enhance user experience.",
+      "skills": [
+        "Next.js",
+        "Firebase",
+        "Tailwind CSS",
+        "TypeScript",
+        "Vercel"
+      ]
+    },
+    {
+      "name": "JB Library",
+      "image": "/Projects/library_project.png",
+      "link": "https://jb-library.vercel.app/",
+      "description": "Successfully completed a technical assessment for Citrof Group, quickly learning Next.js, Prisma, and PostgreSQL in just three days, demonstrating adaptability, problem-solving, and a strong ability to learn new technologies under tight deadlines.",
+      "skills": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma",
+        "PostgreSQL",
+        "React",
+        "SQL",
+        "Vercel"
+      ]
+    },
+    {
+      "name": "LighString Vintage Guitar Shop",
+      "image": "/Projects/lightstring.png",
+      "link": "https://www.facebook.com/profile.php?id=61575701668511",
+      "description": "I create and edit posters, images, videos, and slides to enhance branding and engagement for Lightstring Vintage Guitars Shop.",
+      "skills": [
+        "Canva",
+        "Capcut",
+        "Facebook"
+      ]
+    },
+    {
+      "name": "Safe Travel PH - Data Presenter",
+      "image": "/Projects/safetravelph.png",
+      "link": "https://jorielbrian.shinyapps.io/ISTOPP_Rshiny/?fbclid=IwY2xjawPR6FVleHRuA2FlbQIxMABicmlkETE1Ymt2U1lEdWJFWnEzcldXc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHuEqSq6-TKloOzJm45_86QokqFSJweLi4i5vXZH3QEhNlyGLqYQjxAQsJzte_aem_nnf-O7sHLbL8Z7wSyuGplg",
+      "description": "Developed a travel website for Safe Travel PH Data Presenter, focusing on compiling data for Safe Travel PH and generating presentations that is understandable by viewers.",
+      "skills": [
+        "R",
+        "Shiny",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Website Portfolio",
+      "image": "/Projects/portfolio_project.png",
+      "link": "https://jorielbrian.github.io/JorielBrianSudario_Portfolio/",
+      "description": "My first portfolio, created when I was learning the fundamentals of front-end development.",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+  ],
+  "qualifications": [
+    {
+      "title": "Junior Data Engineer ",
+      "company": "SWAK BPO Corp.",
+      "date": " July 2026 – Present",
+      "contract": "Full Time",
+      "description": [
+        "Design and optimize SQL models and transformations in PostgreSQL for analytics and reporting",
+        "Build and orchestrate data pipelines using Python, Databricks, and Dagster within a Medallion Architecture",
+        "Work with Apache Iceberg and Trino for scalable data processing and querying",
+        "Implement structured data transformations using DBT across data layers",
+        "Apply DataOps practices using Docker, OKD, Tekton, ArgoCD, and Azure DevOps for pipeline deployment and management"
+      ],
+      "skills": [
+        "Python",
+        "SQL",
+        "PostgreSQL",
+        "Databricks",
+        "DBT",
+        "Dagster",
+        "Apache Iceberg",
+        "Trino",
+        "Docker",
+        "OKD (Kubernetes)",
+        "Azure DevOps",
+        "Medallion Architecture",
+        "WSL2 (Ubuntu)",
+        "Git",
+        "Claude Code AI"
+      ]
+    },
+    {
+      "title": "Junior Full-Stack Developer ",
+      "company": "SWAK BPO Corp.",
+      "date": " April 2026 – June 2026",
+      "contract": "Full Time",
+      "description": [
+        "Developed backend services and internal tools using Express.js, Drizzle ORM, and PostgreSQL",
+        "Built full-stack applications with Next.js and NestJS to improve internal workflows",
+        "Migrated selected internal applications to a Laravel + React stack, improving maintainability",
+        "Collaborated with stakeholders to deliver scalable technical solutions"
+      ],
+      "skills": [
+        "Next.js",
+        "NestJS",
+        "TypeScript",
+        "Tailwind CSS",
+        "Laravel",
+        "React",
+        "Express.js",
+        "Drizzle ORM",
+        "PostgreSQL",
+        "Docker",
+        "GIT",
+        "Claude Code AI"
+      ]
+    },
+    {
+      "title": "Systems Engineer II",
+      "company": "La Rose Noire Philippines",
+      "date": "August 2025 – October 2025",
+      "contract": "Full Time",
+      "description": [
+        "Built full-stack web systems using PHP, Tailwind CSS, and SQL to support company operations.",
+        "Provided tech support in the General Office, helping with software and hardware issues.",
+        "Developed an internal website to help employees find job opportunities within the company.",
+        "Assisted with hardware updates and device setup.",
+        "Worked closely with other developers to share ideas and solve problems together.",
+        "Learned and applied PHP Vanilla and related tools to improve project results.",
+        "Took on extra tasks when needed to help finish projects successfully"
+      ],
+      "skills": [
+        "PHP",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "SQL",
+        "FileZilla",
+        "Canva"
+      ]
+    },
+    {
+      "title": "Junior Developer",
+      "company": "Citrof Group Inc.",
+      "date": "August 2023 – November 2023",
+      "contract": "Full Time",
+      "description": [
+        "Self-trained in full-stack development using Next.js, TypeScript, Prisma, and PostgreSQL.",
+        "Helped write scripts and add new features to support ongoing development.",
+        "Built web applications based on project challenges and client requirements",
+        "Monitored and managed data in the database to ensure consistency and performance.",
+        "Took on other supportive tasks to contribute to overall project success."
+      ],
+      "skills": [
+        "T3 Stack",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "tRPC",
+        "React",
+        "Prisma",
+        "Vercel",
+        "SQL",
+        "PostgreSQL",
+        "GIT",
+        "GitHub"
+      ]
+    },
+    {
+      "title": "Systems Analyst",
+      "company": "STRIDE Consulting Inc.",
+      "date": "October 2020 – July 2023",
+      "contract": "Full Time",
+      "description": [
+        "Organized client data using Excel and Access (LGUs, Manila Water Inc.)",
+        "Used R programming to process information and create reports with graphs (DOCX & HTML)",
+        "Assisted in making 2D and 3D DXF files for traffic scenario simulations",
+        "Built trajectories and ran traffic simulations with Cube Dynasim to gather data",
+        "Conducted field surveys in assigned locations and coordinated with local governments",
+        "Installed hardware and software devices in public vehicles and project sites",
+        "Helped assemble electronic components for hardware support",
+        "Created KML files using Google Earth Pro for mapping tasks",
+        "Prepared PowerPoint presentations based on research findings",
+        "Took on additional support tasks to meet project requirements"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "GraphQL",
+        "R",
+        "Shiny",
+        "SQL",
+        "GitHub",
+        "Excel",
+        "Sketchup",
+        "Cube Dynasm",
+        "Computer Assembling",
+        "Circuit Assembling",
+        "Soldering"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Hills of Glory - Mabalacat",
+      "date": "May 2025 – Present",
+      "contract": "Contractual / Project",
+      "description": [
+        "Developing a full-stack web application using Laravel, Livewire, Eloquent ORM, Flux UI, Tailwind CSS, and SQL.",
+        "Led a team, overseeing project progress and ensuring timely delivery of milestones.",
+        "Initiated and implemented both front-end and back-end architecture from scratch.",
+        "Assigned roles and responsibilities to team members based on strengths and project needs.",
+        "Provided hands-on guidance and mentorship to the development team throughout the project.",
+        "Facilitated collaboration between technical contributors, church leaders, and pastors to align development with ministry goals.",
+        "Actively learned and applied Laravel and related technologies to enhance project outcomes.",
+        "Adapted to additional responsibilities and tasks as required to support successful project completion."
+      ],
+      "skills": [
+        "Laravel",
+        "Livewire",
+        "Flux UI",
+        "Eloquent",
+        "Tailwind CSS",
+        "JavaScript",
+        "GIT",
+        "GitHub",
+        "SQL",
+        "SQLite",
+        "MySQL",
+        "Canva"
+      ]
+    },
+    {
+      "title": "Web Developer",
+      "company": "Digital Blast",
+      "date": "December 2025 – February 2026",
+      "contract": "Contractual / Project",
+      "description": [
+        "Built and launched the official Digital Blast business website using WordPress and Hostinger.",
+        "Customized themes and layouts to align with brand requirements and ensure mobile responsiveness.",
+        "Configured essential plugins for performance, security, and basic SEO.",
+        "Managed hosting setup and production deployment."
+      ],
+      "skills": [
+        "WordPress",
+        "Hostinger",
+        "PHP",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "title": "Information Technology Officer I",
+      "company": "City Government of Puerto Princesa",
+      "date": "November 2022 – December 2022",
+      "contract": "Contractual / Project",
+      "description": [
+        "Designed and developed a dynamic web dashboard using R Shiny, tailored to user input for data processing and visualization.",
+        "Processing outputs including interactive tables, charts, maps, and downloadable HTML reports to support data-driven insights.",
+        "Collaborated with the back-end team to establish secure database connections and optimize application usability.",
+        "Conducted thorough debugging, testing, and performance monitoring of dashboard components.",
+        "Adapted to evolving project needs, taking on additional duties to ensure successful deployment and functionality."
+      ],
+      "skills": [
+        "R",
+        "Shiny",
+        "HTML",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Data Analyst",
+      "company": "STRIDE Consulting, Inc. / Manila Water Co. Inc. (Rodriguez, Rizal)",
+      "date": "November 2021 – March 2022",
+      "contract": "Contractual / Project",
+      "description": [
+        "Supported the creation of 2D base maps and 3D road models using SketchUp",
+        "Assisted in developing road simulations and performing traffic flow analysis.",
+        "Conducted field surveys and measured road dimensions for model accuracy.",
+        "Collected vehicle movement and traffic data by tracking vehicles on a bike.",
+        "Built R Markdown programs to compile data and generate formatted reports.",
+        "Enhanced R programs to produce clear, presentable tables and graphs.",
+        "Encoded documents and generated data reports using the developed R Shiny application for analysis.",
+        "Helped with various other project tasks as needed."
+      ],
+      "skills": [
+        "R",
+        "Shiny",
+        "Excel",
+        "Sketchup"
+      ]
+    },
+    {
+      "title": "Computer Programmer II",
+      "company": "University of the Philippines, Diliman (NCPAG)",
+      "date": "June 2021 – January 2022",
+      "contract": "Contractual / Project",
+      "description": [
+        "Developed a responsive web page featuring an interactive map using HTML, CSS, and JavaScript.",
+        "Designed the structure and layout to optimize user experience and functionality.",
+        "Enabled user interaction by allowing data selection, reporting, and database submission.",
+        "Coordinated with back-end developers to debug, test, and monitor web performance",
+        "Supported the team with other project-related tasks as needed."
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "GitHub",
+        "GraphQL"
+      ]
+    },
+    {
+      "title": "Data Analyst",
+      "company": "STRIDE Consulting, Inc. / Manila Water Co. Inc. (Mandaluyong West)",
+      "date": "April 2021 – December 2021",
+      "contract": "Contractual / Project",
+      "description": [
+        "Assisted in creating 2D base maps and inventory using SketchUp",
+        "Contributed to the development of simulations and analysis for sewerage infrastructure.",
+        "Encoded survey data related to the Mandaluyong West Sewerage System.",
+        "Built R Markdown programs to process collected data and generate formatted reports.",
+        "Enhanced R scripts to display clean, presentable tables and graphs.",
+        "Supported other project tasks as needed to ensure smooth execution."
+      ],
+      "skills": [
+        "R",
+        "Shiny",
+        "HTML",
+        "SQL",
+        "Cube Dynasm",
+        "Excel"
+      ]
+    },
+    {
+      "title": "Network Administration Intern",
+      "company": "STRIDE Consulting Inc.",
+      "date": "November 2019 – March 2020",
+      "contract": "Internship",
+      "description": [
+        "Assisted in network configuration and device deployment",
+        "Installed hardware components and assembled electronic parts",
+        "Developed Android application front-end components",
+        "Conducted field surveys and ensured operational device safety",
+        "Monitored project operations and system reliability"
+      ],
+      "skills": [
+        "Circuit Assembling",
+        "Computer Assembling",
+        "Soldering",
+        "Android Development",
+        "Ubuntu Linux"
+      ]
+    },
+    {
+      "title": "Computer Troubleshooting Intern",
+      "company": "STRIDE Consulting Inc.",
+      "date": "April 2017 – May 2017",
+      "contract": "Internship",
+      "description": [
+        "Programmed and edited applications using .NET",
+        "Installed devices in public vehicles for survey projects",
+        "Encoded and organized technical data",
+        "Maintained device inventory and ensured operational integrity"
+      ],
+      "skills": [
+        ".NET",
+        "Computer Assembling",
+        "Troubleshooting",
+        "Circuit Assembling",
+        "Soldering",
+        "Ubuntu Linux"
+      ]
+    },
+    {
+      "title": "IT Office Intern",
+      "company": "STRIDE Consulting Inc.",
+      "date": "April 2016 – May 2016",
+      "contract": "Internship",
+      "description": [
+        "Programmed Arduino and STM microcontroller boards",
+        "Tested embedded system components",
+        "Assembled hardware components through soldering",
+        "Prepared technical documentation and presentations"
+      ],
+      "skills": [
+        "Arduino",
+        "STM32",
+        "Circuit Assembling",
+        "Computer Assembling",
+        "Soldering",
+        "Troubleshooting",
+        "PowerPoint"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "skill": "PHP",
+      "image": "/Skills/php.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "Fundamentals"
+    },
+    {
+      "skill": "HTML",
+      "image": "/Skills/html.png",
+      "proficiency": "Advance",
+      "preference": "Other",
+      "category": "Fundamentals"
+    },
+    {
+      "skill": "CSS",
+      "image": "/Skills/css.png",
+      "proficiency": "Advance",
+      "preference": "Other",
+      "category": "Fundamentals"
+    },
+    {
+      "skill": "JavaScript",
+      "image": "/Skills/javascript.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "Language"
+    },
+    {
+      "skill": "TypeScript",
+      "focus": true,
+      "image": "/Skills/typescript.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "Language"
+    },
+    {
+      "skill": "Python",
+      "focus": true,
+      "image": "/Skills/python.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "Language"
+    },
+    {
+      "skill": "R",
+      "image": "/Skills/r.png",
+      "proficiency": "Functional",
+      "preference": "Other",
+      "category": "Language"
+    },
+    {
+      "skill": "Next.js",
+      "focus": true,
+      "image": "/Skills/next.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "Laravel",
+      "image": "/Skills/laravel.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "React",
+      "focus": true,
+      "image": "/Skills/react.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "Tailwind CSS",
+      "focus": true,
+      "image": "/Skills/tailwind.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "Bootstrap",
+      "image": "/Skills/bootstrap.png",
+      "proficiency": "Proficient",
+      "preference": "Other",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "Express.js",
+      "image": "/Skills/expressjs.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "Livewire",
+      "image": "/Skills/livewire.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "Frameworks"
+    },
+    {
+      "skill": ".NET",
+      "image": "/Skills/dotnet.png",
+      "proficiency": "Beginner",
+      "preference": "Other",
+      "category": "Frameworks"
+    },
+    {
+      "skill": "WordPress",
+      "image": "/Skills/wordpress.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "CLI"
+    },
+    {
+      "skill": "Shadcn/UI",
+      "focus": true,
+      "image": "/Skills/shadcn.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "Tools"
+    },
+    {
+      "skill": "Flux UI",
+      "image": "/Skills/flux.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "Tools"
+    },
+    {
+      "skill": "Material UI",
+      "image": "/Skills/mui.png",
+      "proficiency": "Intermediate",
+      "preference": "Other",
+      "category": "Tools"
+    },
+    {
+      "skill": "SQL",
+      "image": "/Skills/sql.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "Backend"
+    },
+    {
+      "skill": "Node.js",
+      "image": "/Skills/nodejs.png",
+      "proficiency": "Intermediate",
+      "preference": "Other",
+      "category": "Backend"
+    },
+    {
+      "skill": "tRPC",
+      "image": "/Skills/trpc.png",
+      "proficiency": "Intermediate",
+      "preference": "Other",
+      "category": "Backend"
+    },
+    {
+      "skill": "PostgreSQL",
+      "focus": true,
+      "image": "/Skills/postgresql.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "Database"
+    },
+    {
+      "skill": "Neon",
+      "image": "/Skills/neon.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "Database"
+    },
+    {
+      "skill": "MySQL",
+      "image": "/Skills/mysql.png",
+      "proficiency": "Intermediate",
+      "preference": "Other",
+      "category": "Database"
+    },
+    {
+      "skill": "SQLite",
+      "image": "/Skills/sqlite.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "Database"
+    },
+    {
+      "skill": "Firebase",
+      "image": "/Skills/firebase.png",
+      "proficiency": "Functional",
+      "preference": "Other",
+      "category": "Database"
+    },
+    {
+      "skill": "Prisma",
+      "image": "/Skills/prisma.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "ORMs"
+    },
+    {
+      "skill": "Drizzle ORM",
+      "focus": true,
+      "image": "/Skills/drizzle.png",
+      "proficiency": "Intermediate",
+      "preference": "Core Skills",
+      "category": "ORMs"
+    },
+    {
+      "skill": "Eloquent",
+      "image": "/Skills/eloquent.png",
+      "proficiency": "Functional",
+      "preference": "Other",
+      "category": "ORMs"
+    },
+    {
+      "skill": "GraphQL",
+      "image": "/Skills/graphql.png",
+      "proficiency": "Intermediate",
+      "preference": "Other",
+      "category": "ORMs"
+    },
+    {
+      "skill": "GIT",
+      "image": "/Skills/git.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "CI/CD & Deployment"
+    },
+    {
+      "skill": "GitHub",
+      "image": "/Skills/github.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "CI/CD & Deployment"
+    },
+    {
+      "skill": "Vercel",
+      "image": "/Skills/vercel.png",
+      "proficiency": "Proficient",
+      "preference": "Core Skills",
+      "category": "CI/CD & Deployment"
+    },
+    {
+      "skill": "Hostinger",
+      "image": "/Skills/hostinger.png",
+      "proficiency": "Intermediate",
+      "preference": "Sub Skills",
+      "category": "CI/CD & Deployment"
+    },
+    {
+      "skill": "Vite",
+      "image": "/Skills/vite.svg",
+      "proficiency": "Proficient",
+      "preference": "Other",
+      "category": "Other"
+    },
+    {
+      "skill": "FileZilla",
+      "image": "/Skills/filezilla.png",
+      "proficiency": "Functional",
+      "preference": "Other",
+      "category": "CI/CD & Deployment"
+    },
+    {
+      "skill": "Shiny",
+      "image": "/Skills/shiny.png",
+      "proficiency": "Beginner",
+      "preference": "Other",
+      "category": "Tools"
+    },
+    {
+      "skill": "Sketchup",
+      "image": "/Skills/sketchup.png",
+      "proficiency": "Beginner",
+      "preference": "Other",
+      "category": "Graphics"
+    },
+    {
+      "skill": "Cube Dynasm",
+      "image": "/Skills/cube_dynasm.png",
+      "proficiency": "Functional",
+      "preference": "Other",
+      "category": "Tools"
+    },
+    {
+      "skill": "Ubuntu Linux",
+      "image": "/Skills/ubuntu.png",
+      "proficiency": "Functional",
+      "preference": "Other",
+      "category": "Operating System"
+    },
+    {
+      "skill": "Computer Assembling",
+      "image": "/Skills/computerassembling.png",
+      "proficiency": "Proficient",
+      "preference": "Hardware",
+      "category": "Hardware"
+    },
+    {
+      "skill": "Circuit Assembling",
+      "image": "/Skills/circuitassembling.png",
+      "proficiency": "Proficient",
+      "preference": "Hardware",
+      "category": "Hardware"
+    },
+    {
+      "skill": "Troubleshooting",
+      "image": "/Skills/troubleshooting.png",
+      "proficiency": "Intermediate",
+      "preference": "Hardware",
+      "category": "Hardware"
+    },
+    {
+      "skill": "Soldering",
+      "image": "/Skills/soldering.png",
+      "proficiency": "Proficient",
+      "preference": "Hardware",
+      "category": "Hardware"
+    },
+    {
+      "skill": "Word",
+      "image": "/Skills/word.png",
+      "proficiency": "Proficient",
+      "preference": "Soft Skills",
+      "category": "Tools"
+    },
+    {
+      "skill": "PowerPoint",
+      "image": "/Skills/powerpoint.png",
+      "proficiency": "Proficient",
+      "preference": "Soft Skills",
+      "category": "Tools"
+    },
+    {
+      "skill": "Excel",
+      "image": "/Skills/excel.png",
+      "proficiency": "Proficient",
+      "preference": "Soft Skills",
+      "category": "Tools"
+    },
+    {
+      "skill": "Canva",
+      "image": "/Skills/canva.png",
+      "proficiency": "Intermediate",
+      "preference": "Design Skills",
+      "category": "Graphics"
+    },
+    {
+      "skill": "Capcut",
+      "image": "/Skills/capcut.png",
+      "proficiency": "Intermediate",
+      "preference": "Design Skills",
+      "category": "Graphics"
+    },
+    {
+      "skill": "Powerdirector",
+      "image": "/Skills/powerdirector.png",
+      "proficiency": "Functional",
+      "preference": "Design Skills",
+      "category": "Graphics"
+    },
+    {
+      "skill": "Facebook",
+      "image": "/Skills/facebook.png",
+      "proficiency": "Proficient",
+      "preference": "Other",
+      "category": "Social Media"
+    },
+    {
+      "skill": "Software",
+      "image": "/Skills/software.png",
+      "proficiency": "Proficient",
+      "preference": "Other",
+      "category": "Other"
+    },
+    {
+      "skill": "Android Development",
+      "image": "/Skills/android.png",
+      "proficiency": "Beginner",
+      "preference": "Other",
+      "category": "Other"
+    },
+    {
+      "skill": "Arduino",
+      "image": "/Skills/arduino.png",
+      "proficiency": "Beginner",
+      "preference": "Other",
+      "category": "Other"
+    },
+    {
+      "skill": "STM32",
+      "image": "/Skills/stm.png",
+      "proficiency": "Beginner",
+      "preference": "Other",
+      "category": "Other"
+    }
+  ],
+  "content": {
+    "INTRODUCTION": [
+      "A Software Engineer with production experience in full-stack development and data systems, building scalable web applications, internal tools, and data-driven solutions.",
+      "Focused on developing modern applications using Next.js, NestJS, and PostgreSQL, while expanding into data engineering through Python-based pipelines, SQL optimization, and Databricks."
+    ],
+    "ABOUT": [
+      "I am a Software Engineer with hands-on experience building full-stack applications and data-driven systems using Next.js, NestJS, TypeScript, and PostgreSQL. I have contributed to production environments and developed real-world solutions, including administrative and management systems that support actual operational workflows. My work reflects a solid foundation in software engineering principles, database design, and API-driven architectures, with growing exposure to data pipelines and analytics-focused systems.",
+      "Throughout my career, I have taken on roles such as Systems Engineer II, Systems Analyst, and Full-Stack Developer, where I designed and delivered systems end-to-end—translating business requirements into scalable, maintainable solutions. These experiences strengthened my ability to work across the full development lifecycle, collaborate with cross-functional teams, and consistently deliver reliable results in production environments.",
+      "I am focused on growing as a Software Engineer with strengths in full-stack development while expanding into data engineering. I work with technologies such as Python, SQL, and Databricks to build and optimize data pipelines, and I aim to contribute to systems that combine application development with data-driven insights. I value clean architecture, continuous learning, and building systems that are both practical and scalable.",
+      "Beyond my professional work, I value faith, family, and community as core foundations. I serve as a Lead Guitarist at Hills of Glory Mabalacat and stay actively involved in fellowship and discipleship. These commitments shape my discipline, consistency, and long-term perspective in both my personal life and engineering career."
+    ],
+    "STORY": [
+      "My path to becoming a web developer began not with a single line of code, but with a question I kept asking in every role: \"How can we make this system work better?\"",
+      "My career started in the world of data and analysis. At STRIDE Consulting, I worked on complex traffic simulations, installing hardware in the field and transforming raw data into clear, actionable reports using R. This experience taught me a fundamental truth: every technical system exists to serve a real-world need. I learned to see the bigger picture, from hardware setup to final data visualization.",
+      "That big-picture thinking is what pulled me toward web development. I wanted to build the interfaces and tools that people actually use. I dove in headfirst, teaching myself modern front-end technologies. This led me to Citrof Group, where I had to rapidly master the T3 Stack (Next.js, TypeScript, tRPC) to contribute to live projects. It was a challenging and exhilarating confirmation that I could not only learn quickly but also deliver tangible value.",
+      "Driven by a desire to own a project from concept to launch, I took on a volunteer role as a Project Lead Developer at Hills of Glory church. Starting with just an idea, I taught myself the TALL Stack (Laravel, Livewire) and led a small team to build a full church management system. This experience was pivotal—it showed me the power of technology to build community and solve specific organizational problems.",
+      "Most recently, as a Systems Engineer at La Rose Noire, I focused on creating internal web systems to streamline operations, deepening my practical PHP expertise."
+    ],
+    "GOALS": [
+      "To secure a long-term role as a Full-Stack Web Developer within a stable team that values clean code, mentorship, and sustainable growth.",
+      "To deepen my expertise in a focused technology stack such as Next.js or Laravel while contributing meaningfully to production codebases.",
+      "To leverage my adaptability and quick learning skills to take on increasing responsibilities and complex projects over time.",
+      "Today, my focus is clear. I am seeking to channel this blend of analytical thinking, rapid learning, and full-stack project experience into a dedicated role. I want to join a collaborative engineering team where I can deepen my mastery of a modern stack like Next.js or Laravel, contribute to meaningful products, and grow alongside colleagues who value clean, impactful code.",
+      "I believe great development is about understanding the \"why\" behind the \"what you're building.\" If you're looking for a developer who combines technical adaptability with a systems-thinking approach, I'd love to connect."
+    ],
+    "OUTSIDE_WORK": [
+      "I serve as the Lead Guitarist and a Music Theory Mentor in my church's Music and Arts Ministry.",
+      "This role allows me to blend technical skill with spiritual service—from crafting worship setlists and teaching foundational theory to fostering fellowship within our creative community.",
+      "I deeply value the unique connection between creative expression and spiritual growth that this ministry nurtures."
+    ]
+  }
+}
