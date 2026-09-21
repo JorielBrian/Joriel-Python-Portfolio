@@ -3,7 +3,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from ..database import get_db
-from ..security import require_admin_key
+from ..security import require_admin_session
 from .. import models, schemas
 
 router = APIRouter(prefix="/content", tags=["content"])
@@ -22,7 +22,7 @@ def get_content(key: str, db: Session = Depends(get_db)):
     return block
 
 
-@router.put("/{key}", response_model=schemas.ContentBlockOut, dependencies=[Depends(require_admin_key)])
+@router.put("/{key}", response_model=schemas.ContentBlockOut, dependencies=[Depends(require_admin_session)])
 def update_content(key: str, payload: schemas.ContentBlockUpdate, db: Session = Depends(get_db)):
     key = key.upper()
     block = db.scalar(select(models.ContentBlock).where(models.ContentBlock.key == key))

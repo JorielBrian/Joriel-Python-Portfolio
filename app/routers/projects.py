@@ -3,7 +3,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from ..database import get_db
-from ..security import require_admin_key
+from ..security import require_admin_session
 from .. import models, schemas
 
 router = APIRouter(prefix="/projects", tags=["projects"])
@@ -22,7 +22,7 @@ def get_project(project_id: int, db: Session = Depends(get_db)):
     return project
 
 
-@router.post("", response_model=schemas.ProjectOut, dependencies=[Depends(require_admin_key)])
+@router.post("", response_model=schemas.ProjectOut, dependencies=[Depends(require_admin_session)])
 def create_project(payload: schemas.ProjectCreate, db: Session = Depends(get_db)):
     project = models.Project(**payload.model_dump())
     db.add(project)
@@ -31,7 +31,7 @@ def create_project(payload: schemas.ProjectCreate, db: Session = Depends(get_db)
     return project
 
 
-@router.put("/{project_id}", response_model=schemas.ProjectOut, dependencies=[Depends(require_admin_key)])
+@router.put("/{project_id}", response_model=schemas.ProjectOut, dependencies=[Depends(require_admin_session)])
 def update_project(project_id: int, payload: schemas.ProjectUpdate, db: Session = Depends(get_db)):
     project = db.get(models.Project, project_id)
     if not project:
@@ -43,7 +43,7 @@ def update_project(project_id: int, payload: schemas.ProjectUpdate, db: Session 
     return project
 
 
-@router.delete("/{project_id}", status_code=204, dependencies=[Depends(require_admin_key)])
+@router.delete("/{project_id}", status_code=204, dependencies=[Depends(require_admin_session)])
 def delete_project(project_id: int, db: Session = Depends(get_db)):
     project = db.get(models.Project, project_id)
     if not project:

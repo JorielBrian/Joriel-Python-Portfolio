@@ -3,7 +3,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from ..database import get_db
-from ..security import require_admin_key
+from ..security import require_admin_session
 from .. import models, schemas
 
 router = APIRouter(prefix="/skills", tags=["skills"])
@@ -22,7 +22,7 @@ def get_skill(skill_id: int, db: Session = Depends(get_db)):
     return skill
 
 
-@router.post("", response_model=schemas.SkillOut, dependencies=[Depends(require_admin_key)])
+@router.post("", response_model=schemas.SkillOut, dependencies=[Depends(require_admin_session)])
 def create_skill(payload: schemas.SkillCreate, db: Session = Depends(get_db)):
     skill = models.Skill(**payload.model_dump())
     db.add(skill)
@@ -31,7 +31,7 @@ def create_skill(payload: schemas.SkillCreate, db: Session = Depends(get_db)):
     return skill
 
 
-@router.put("/{skill_id}", response_model=schemas.SkillOut, dependencies=[Depends(require_admin_key)])
+@router.put("/{skill_id}", response_model=schemas.SkillOut, dependencies=[Depends(require_admin_session)])
 def update_skill(skill_id: int, payload: schemas.SkillUpdate, db: Session = Depends(get_db)):
     skill = db.get(models.Skill, skill_id)
     if not skill:
@@ -43,7 +43,7 @@ def update_skill(skill_id: int, payload: schemas.SkillUpdate, db: Session = Depe
     return skill
 
 
-@router.delete("/{skill_id}", status_code=204, dependencies=[Depends(require_admin_key)])
+@router.delete("/{skill_id}", status_code=204, dependencies=[Depends(require_admin_session)])
 def delete_skill(skill_id: int, db: Session = Depends(get_db)):
     skill = db.get(models.Skill, skill_id)
     if not skill:

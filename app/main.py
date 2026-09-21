@@ -1,8 +1,8 @@
 import os
-from fastapi import FastAPI  # pyright: ignore[reportMissingImports]
-from fastapi.middleware.cors import CORSMiddleware  # pyright: ignore[reportMissingImports]
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import projects, qualifications, skills, content
+from .routers import projects, qualifications, skills, content, auth
 
 app = FastAPI(title="Joriel Portfolio API", version="0.1.0")
 
@@ -22,6 +22,7 @@ app.include_router(projects.router)
 app.include_router(qualifications.router)
 app.include_router(skills.router)
 app.include_router(content.router)
+app.include_router(auth.router)
 
 
 @app.get("/health")
