@@ -1,6 +1,5 @@
-from sqlalchemy import String, Integer, Boolean
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import JSON, String, Integer, Boolean  # type: ignore[import-not-found]
+from sqlalchemy.orm import Mapped, mapped_column  # type: ignore[import-not-found]
 from .database import Base
 
 
@@ -12,7 +11,7 @@ class Project(Base):
     image: Mapped[str] = mapped_column(String, nullable=False)
     link: Mapped[str | None] = mapped_column(String, nullable=True)
     description: Mapped[str] = mapped_column(String, nullable=False)
-    skills: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    skills: Mapped[list[str]] = mapped_column(JSON, nullable=False, default=list)
     order: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
 
 
@@ -24,8 +23,8 @@ class Qualification(Base):
     company: Mapped[str] = mapped_column(String, nullable=False)
     date: Mapped[str] = mapped_column(String, nullable=False)
     contract: Mapped[str] = mapped_column(String, nullable=False)
-    description: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
-    skills: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    description: Mapped[list[str]] = mapped_column(JSON, nullable=False, default=list)
+    skills: Mapped[list[str]] = mapped_column(JSON, nullable=False, default=list)
     order: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
 
 
@@ -49,4 +48,4 @@ class ContentBlock(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     key: Mapped[str] = mapped_column(String, unique=True, nullable=False)  # e.g. "ABOUT"
-    paragraphs: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    paragraphs: Mapped[list[str]] = mapped_column(JSON, nullable=False, default=list)

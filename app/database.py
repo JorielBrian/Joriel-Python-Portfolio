@@ -1,6 +1,6 @@
 import os
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, DeclarativeBase
+from sqlalchemy import create_engine  # pyright: ignore[reportMissingImports]
+from sqlalchemy.orm import sessionmaker, DeclarativeBase  # pyright: ignore[reportMissingImports]
 
 DATABASE_URL = os.environ["DATABASE_URL"]  # e.g. postgresql://user:pass@ep-xxxx.neon.tech/dbname?sslmode=require
 
