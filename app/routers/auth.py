@@ -1,3 +1,5 @@
+from collections import defaultdict
+from time import time
 from fastapi import APIRouter, Depends, HTTPException, Response, Request
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -17,6 +19,29 @@ from ..auth import (
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
+# Simple in-memory brute-force guard for a single-admin login. Not
+# distributed (resets on restart, and won't share state across multiple
+# server instances) — perfectly adequate for one admin account on one
+# Render instance, overkill to reach for Redis at this scale.
+MAX_ATTEMPTS = 5
+WINDOW_SECONDS = 15 * 60
+_failed_attempts: dict[str, list[float]] = defaultdict(list)
+
+
+def _check_rate_limit(ip: str):
+    now = time()
+    recent = [t for t in _failed_attempts[ip] if now - t < WINDOW_SECONDS]
+    _failed_attempts[ip] = recent
+    if len(recent) >= MAX_ATTEMPTS:
+        raise HTTPException(
+            status_code=429,
+            detail="Too many login attempts. Try again in a few minutes.",
+        )
+
+
+def _record_failed_attempt(ip: str):
+    _failed_attempts[ip].append(time())
+
 
 class LoginRequest(BaseModel):
     username: str
@@ -24,9 +49,13 @@ class LoginRequest(BaseModel):
 
 
 @router.post("/login")
-def login(payload: LoginRequest, response: Response, db: Session = Depends(get_db)):
+def login(payload: LoginRequest, request: Request, response: Response, db: Session = Depends(get_db)):
+    client_ip = request.client.host if request.client else "unknown"
+    _check_rate_limit(client_ip)
+
     user = db.scalar(select(models.AdminUser).where(models.AdminUser.username == payload.username))
     if not user or not verify_password(payload.password, user.password_hash):
+        _record_failed_attempt(client_ip)
         # Same error for "no such user" and "wrong password" — don't reveal which.
         raise HTTPException(status_code=401, detail="Invalid username or password")
 
