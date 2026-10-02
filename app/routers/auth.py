@@ -45,7 +45,17 @@ def login(payload: LoginRequest, response: Response, db: Session = Depends(get_d
 
 @router.post("/logout")
 def logout(response: Response):
-    response.delete_cookie(key=COOKIE_NAME, path="/")
+    # Browsers key a cookie on name + path + domain + the secure/samesite
+    # attributes it was set with. delete_cookie() must match those exactly,
+    # or the browser treats it as a different cookie and the original
+    # session cookie silently survives — which is exactly what was
+    # happening here before this fix.
+    response.delete_cookie(
+        key=COOKIE_NAME,
+        path="/",
+        secure=COOKIE_SECURE,
+        samesite=COOKIE_SAMESITE,
+    )
     return {"ok": True}
 
 
