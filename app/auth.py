@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 
 JWT_SECRET = os.environ["JWT_SECRET"]  # long random string, separate from ADMIN_API_KEY
 JWT_ALGORITHM = "HS256"
-JWT_EXPIRE_HOURS = 24 * 7  # a week; re-login after that
+JWT_EXPIRE_HOURS = 1  # session auto-expires 1 hour after login, server-enforced
 
 COOKIE_NAME = "admin_session"
 
@@ -28,7 +28,7 @@ def verify_password(password: str, password_hash: str) -> bool:
 
 
 def create_access_token(username: str) -> str:
-    payload = {
+    payload = { 
         "sub": username,
         "exp": datetime.now(timezone.utc) + timedelta(hours=JWT_EXPIRE_HOURS),
     }
