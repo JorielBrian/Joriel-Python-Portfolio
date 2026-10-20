@@ -4,19 +4,23 @@ import uuid
 import boto3
 
 
-# Keep the Neon Object Storage bucket private. Only this backend uses these
-# credentials; browsers receive files through the authenticated S3 client below.
-NEON_STORAGE_ENDPOINT = os.environ["NEON_STORAGE_ENDPOINT"]
-NEON_STORAGE_ACCESS_KEY_ID = os.environ["NEON_STORAGE_ACCESS_KEY_ID"]
-NEON_STORAGE_SECRET_ACCESS_KEY = os.environ["NEON_STORAGE_SECRET_ACCESS_KEY"]
+# Neon Object Storage credentials stay on the backend. The bucket remains
+# private; public downloads are streamed through the FastAPI endpoint.
+AWS_ENDPOINT_URL_S3 = os.environ["AWS_ENDPOINT_URL_S3"]
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+AWS_REGION = os.environ["AWS_REGION"]
+
+# The bucket name is separate from the endpoint and credentials.
+# Configure NEON_STORAGE_BUCKET with the exact name of your Neon bucket.
 NEON_STORAGE_BUCKET = os.environ["NEON_STORAGE_BUCKET"]
 
 _client = boto3.client(
     "s3",
-    endpoint_url=NEON_STORAGE_ENDPOINT,
-    aws_access_key_id=NEON_STORAGE_ACCESS_KEY_ID,
-    aws_secret_access_key=NEON_STORAGE_SECRET_ACCESS_KEY,
-    region_name="auto",
+    endpoint_url=AWS_ENDPOINT_URL_S3,
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    region_name=AWS_REGION,
 )
 
 
