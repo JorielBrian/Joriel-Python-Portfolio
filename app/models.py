@@ -1,12 +1,12 @@
-from sqlalchemy import String, Integer, Boolean
+from sqlalchemy import String, Integer, Boolean, DateTime
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.sql import func
 from .database import Base
 
 
 class Project(Base):
     __tablename__ = "projects"
-
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, nullable=False)
     image: Mapped[str] = mapped_column(String, nullable=False)
@@ -18,7 +18,6 @@ class Project(Base):
 
 class Qualification(Base):
     __tablename__ = "qualifications"
-
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     title: Mapped[str] = mapped_column(String, nullable=False)
     company: Mapped[str] = mapped_column(String, nullable=False)
@@ -31,7 +30,6 @@ class Qualification(Base):
 
 class Skill(Base):
     __tablename__ = "skills"
-
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     skill: Mapped[str] = mapped_column(String, nullable=False)
     image: Mapped[str] = mapped_column(String, nullable=False)
@@ -43,20 +41,25 @@ class Skill(Base):
 
 
 class ContentBlock(Base):
-    """Bio-style text sections: INTRODUCTION, ABOUT, STORY, GOALS, OUTSIDE_WORK.
-    Each is a named list of paragraphs, editable from the dashboard."""
     __tablename__ = "content_blocks"
-
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    key: Mapped[str] = mapped_column(String, unique=True, nullable=False)  # e.g. "ABOUT"
+    key: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     paragraphs: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
 
 
 class AdminUser(Base):
-    """The single dashboard owner. Password is bcrypt-hashed, never stored plain.
-    Created via scripts/create_admin.py, not through any API endpoint."""
     __tablename__ = "admin_users"
-
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     username: Mapped[str] = mapped_column(String, unique=True, nullable=False)
     password_hash: Mapped[str] = mapped_column(String, nullable=False)
+
+
+class Resume(Base):
+    """Single-row table: the current CV file, stored in Neon Storage.
+    Each new upload replaces this row (and deletes the old stored object)."""
+    __tablename__ = "resume"
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    object_key: Mapped[str] = mapped_column(String, nullable=False)
+    url: Mapped[str] = mapped_column(String, nullable=False)
+    original_filename: Mapped[str] = mapped_column(String, nullable=False)
+    uploaded_at: Mapped["DateTime"] = mapped_column(DateTime(timezone=True), server_default=func.now())
