@@ -36,6 +36,29 @@ def get_resume(db: Session = Depends(get_db)):
     return resume
 
 
+@router.get("/view")
+def view_resume(db: Session = Depends(get_db)):
+    resume = db.scalar(select(models.Resume).order_by(models.Resume.id.desc()))
+    if not resume:
+        raise HTTPException(status_code=404, detail="No resume uploaded yet")
+
+    try:
+        file_bytes = storage.download_file(resume.object_key)
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail="Unable to retrieve the CV from storage") from exc
+
+    filename = _safe_filename(resume.original_filename)
+    content_disposition = (
+        'inline; filename="resume.pdf"; '
+        f"filename*=UTF-8''{quote(filename)}"
+    )
+    return StreamingResponse(
+        BytesIO(file_bytes),
+        media_type="application/pdf",
+        headers={"Content-Disposition": content_disposition},
+    )
+
+
 @router.get("/download")
 def download_resume(db: Session = Depends(get_db)):
     resume = db.scalar(select(models.Resume).order_by(models.Resume.id.desc()))
