@@ -1,9 +1,11 @@
 import os
 import uuid
+
 import boto3
 
-# Neon Storage is S3-compatible — same boto3 client code as AWS S3 or
-# Cloudflare R2 would use, just pointed at Neon's endpoint instead.
+
+# Keep the Neon Object Storage bucket private. Only this backend uses these
+# credentials; browsers receive files through the authenticated S3 client below.
 NEON_STORAGE_ENDPOINT = os.environ["NEON_STORAGE_ENDPOINT"]
 NEON_STORAGE_ACCESS_KEY_ID = os.environ["NEON_STORAGE_ACCESS_KEY_ID"]
 NEON_STORAGE_SECRET_ACCESS_KEY = os.environ["NEON_STORAGE_SECRET_ACCESS_KEY"]
@@ -18,28 +20,34 @@ _client = boto3.client(
 )
 
 
-def upload_file(file_bytes: bytes, original_filename: str, content_type: str) -> tuple[str, str]:
-    """Uploads a file to the bucket. Returns (object_key, public_url).
-    A random prefix on the key avoids any caching serving a stale file
-    under the same name after a replace."""
-    extension = original_filename.rsplit(".", 1)[-1] if "." in original_filename else "bin"
-    key = f"resume/{uuid.uuid4().hex}.{extension}"
+def upload_file(file_bytes: bytes, original_filename: str, content_type: str) -> str:
+    """Upload a file to the private bucket and return its object key."""
+    key = f"resume/{uuid.uuid4().hex}.pdf"
 
     _client.put_object(
         Bucket=NEON_STORAGE_BUCKET,
         Key=key,
         Body=file_bytes,
         ContentType=content_type,
-        ContentDisposition=f'inline; filename="{original_filename}"',
     )
-    # public_read buckets serve objects directly at this path.
-    public_url = f"{NEON_STORAGE_ENDPOINT}/{NEON_STORAGE_BUCKET}/{key}"
-    return key, public_url
+    return key
+
+
+def download_file(key: str) -> bytes:
+    """Read a private object through the backend's storage credentials."""
+    response = _client.get_object(Bucket=NEON_STORAGE_BUCKET, Key=key)
+    body = response["Body"]
+    try:
+        return body.read()
+    finally:
+        body.close()
 
 
 def delete_file(key: str) -> None:
-    """Best-effort delete — a failure here shouldn't block a new upload."""
+    """Best-effort cleanup; deletion failure must not break a successful replace."""
     try:
         _client.delete_object(Bucket=NEON_STORAGE_BUCKET, Key=key)
     except Exception:
+        # The current CV has already been saved in the database. A stale old
+        # object is preferable to reporting a failed replacement.
         pass
