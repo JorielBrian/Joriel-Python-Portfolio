@@ -1,7 +1,7 @@
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict
 
 
-# ---------- Project ----------
 class ProjectBase(BaseModel):
     name: str
     image: str
@@ -29,7 +29,6 @@ class ProjectOut(ProjectBase):
     id: int
 
 
-# ---------- Qualification ----------
 class QualificationBase(BaseModel):
     title: str
     company: str
@@ -59,7 +58,6 @@ class QualificationOut(QualificationBase):
     id: int
 
 
-# ---------- Skill ----------
 class SkillBase(BaseModel):
     skill: str
     image: str
@@ -89,7 +87,6 @@ class SkillOut(SkillBase):
     id: int
 
 
-# ---------- Content Block ----------
 class ContentBlockUpdate(BaseModel):
     paragraphs: list[str]
 
@@ -98,3 +95,10 @@ class ContentBlockOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     key: str
     paragraphs: list[str]
+
+
+class ResumeOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    url: str
+    original_filename: str
+    uploaded_at: datetime
