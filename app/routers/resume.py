@@ -15,7 +15,7 @@ router = APIRouter(prefix="/resume", tags=["resume"])
 
 ALLOWED_CONTENT_TYPES = {"application/pdf"}
 MAX_SIZE_BYTES = 10 * 1024 * 1024  # 10 MB
-DOWNLOAD_PATH = "/resume/download"
+RESUME_PATH = "/resume"
 
 
 def _safe_filename(filename: str | None) -> str:
@@ -32,8 +32,31 @@ def get_resume(db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="No resume uploaded yet")
 
     # Never expose the private bucket's object URL to the browser.
-    resume.url = DOWNLOAD_PATH
+    resume.url = RESUME_PATH
     return resume
+
+
+@router.get("/view")
+def view_resume(db: Session = Depends(get_db)):
+    resume = db.scalar(select(models.Resume).order_by(models.Resume.id.desc()))
+    if not resume:
+        raise HTTPException(status_code=404, detail="No resume uploaded yet")
+
+    try:
+        file_bytes = storage.download_file(resume.object_key)
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail="Unable to retrieve the CV from storage") from exc
+
+    filename = _safe_filename(resume.original_filename)
+    content_disposition = (
+        'inline; filename="resume.pdf"; '
+        f"filename*=UTF-8''{quote(filename)}"
+    )
+    return StreamingResponse(
+        BytesIO(file_bytes),
+        media_type="application/pdf",
+        headers={"Content-Disposition": content_disposition},
+    )
 
 
 @router.get("/download")
@@ -86,12 +109,12 @@ async def upload_resume(file: UploadFile = File(...), db: Session = Depends(get_
     resume = existing
     if resume:
         resume.object_key = key
-        resume.url = DOWNLOAD_PATH
+        resume.url = RESUME_PATH
         resume.original_filename = filename
     else:
         resume = models.Resume(
             object_key=key,
-            url=DOWNLOAD_PATH,
+            url=RESUME_PATH,
             original_filename=filename,
         )
         db.add(resume)
@@ -107,5 +130,5 @@ async def upload_resume(file: UploadFile = File(...), db: Session = Depends(get_
     if old_key and old_key != key:
         storage.delete_file(old_key)
 
-    resume.url = DOWNLOAD_PATH
+    resume.url = RESUME_PATH
     return resume
