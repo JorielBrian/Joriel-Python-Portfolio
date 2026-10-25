@@ -2,7 +2,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import projects, qualifications, skills, content, auth, resume
+from .routers import projects, qualifications, skills, content, auth, resume, admin_dashboard
 
 app = FastAPI(title="Joriel Portfolio API", version="0.1.0")
 
@@ -22,6 +22,7 @@ app.include_router(skills.router)
 app.include_router(content.router)
 app.include_router(auth.router)
 app.include_router(resume.router)
+app.include_router(admin_dashboard.router)
 
 
 @app.get("/health")
