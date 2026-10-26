@@ -37,6 +37,7 @@ class Skill(Base):
     proficiency: Mapped[str] = mapped_column(String, nullable=False)
     preference: Mapped[str] = mapped_column(String, nullable=False)
     category: Mapped[str] = mapped_column(String, nullable=False)
+    area: Mapped[str] = mapped_column(String, nullable=False, default="Other", server_default="Other")
     order: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
 
 
