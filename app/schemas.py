@@ -65,6 +65,7 @@ class SkillBase(BaseModel):
     proficiency: str
     preference: str
     category: str
+    area: str = "Other"
     order: int = 0
 
 
@@ -79,6 +80,7 @@ class SkillUpdate(BaseModel):
     proficiency: str | None = None
     preference: str | None = None
     category: str | None = None
+    area: str | None = None
     order: int | None = None
 
 
