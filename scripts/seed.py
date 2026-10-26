@@ -53,7 +53,7 @@ def main():
                 db.add(models.Skill(
                     skill=s["skill"], image=s["image"], focus=s.get("focus", False),
                     proficiency=s["proficiency"], preference=s["preference"],
-                    category=s["category"], order=i,
+                    category=s["category"], area=s.get("area", "Other"), order=i,
                 ))
             print(f"Seeded {len(data['skills'])} skills.")
         else:
