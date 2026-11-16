@@ -2,7 +2,9 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import projects, qualifications, skills, content, auth, resume, admin_dashboard
+from .routers import projects, qualifications, skills, content, auth, resume, admin_dashboard, images
+from .database import engine
+from . import models
 
 app = FastAPI(title="Joriel Portfolio API", version="0.1.0")
 
@@ -23,6 +25,14 @@ app.include_router(content.router)
 app.include_router(auth.router)
 app.include_router(resume.router)
 app.include_router(admin_dashboard.router)
+app.include_router(images.router)
+
+
+@app.on_event("startup")
+def ensure_image_tables():
+    # Additive, idempotent schema setup for the media feature. Existing tables/data are untouched.
+    models.ImageAsset.__table__.create(bind=engine, checkfirst=True)
+    models.BioImageAssignment.__table__.create(bind=engine, checkfirst=True)
 
 
 @app.get("/health")

@@ -13,3 +13,20 @@ def require_admin_session(request: Request):
             detail="Not authenticated. Please log in.",
         )
     return username
+
+
+def require_admin_origin(request: Request):
+    """Reject cross-site form submissions to cookie-authenticated media mutations."""
+    import os
+
+    origin = request.headers.get("origin")
+    allowed = {
+        item.strip().rstrip("/")
+        for item in os.environ.get("CORS_ORIGINS", "").split(",")
+        if item.strip()
+    }
+    if not origin or origin.rstrip("/") not in allowed:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Request origin is not allowed.",
+        )

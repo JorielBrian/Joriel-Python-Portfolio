@@ -55,3 +55,14 @@ def delete_file(key: str) -> None:
         # The current CV has already been saved in the database. A stale old
         # object is preferable to reporting a failed replacement.
         pass
+
+
+def upload_image(file_bytes: bytes, object_key: str) -> None:
+    """Store a processed WebP image in the private media bucket."""
+    _client.put_object(
+        Bucket=NEON_STORAGE_BUCKET,
+        Key=object_key,
+        Body=file_bytes,
+        ContentType="image/webp",
+        CacheControl="public, max-age=3600",
+    )
