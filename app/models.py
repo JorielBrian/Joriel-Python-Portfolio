@@ -64,3 +64,24 @@ class Resume(Base):
     url: Mapped[str] = mapped_column(String, nullable=False)
     original_filename: Mapped[str] = mapped_column(String, nullable=False)
     uploaded_at: Mapped["DateTime"] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class ImageAsset(Base):
+    """An image in the private portfolio media library (maximum ten slots)."""
+    __tablename__ = "image_assets"
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    slot: Mapped[int] = mapped_column(Integer, unique=True, nullable=False)
+    object_key: Mapped[str] = mapped_column(String, nullable=False, unique=True)
+    original_filename: Mapped[str] = mapped_column(String(180), nullable=False)
+    content_type: Mapped[str] = mapped_column(String(50), nullable=False, default="image/webp")
+    size_bytes: Mapped[int] = mapped_column(Integer, nullable=False)
+    width: Mapped[int] = mapped_column(Integer, nullable=False)
+    height: Mapped[int] = mapped_column(Integer, nullable=False)
+    uploaded_at: Mapped["DateTime"] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class BioImageAssignment(Base):
+    """Maps each About-page image position to an item in the shared media library."""
+    __tablename__ = "bio_image_assignments"
+    section_key: Mapped[str] = mapped_column(String(40), primary_key=True)
+    image_id: Mapped[str] = mapped_column(String(36), nullable=False)
