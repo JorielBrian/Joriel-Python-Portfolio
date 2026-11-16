@@ -58,7 +58,7 @@ def get_image_file(image_id: str, db: Session = Depends(get_db)):
         media_type="image/webp",
         headers={
             "Content-Disposition": f'inline; filename="{image_id}.webp"; filename*=UTF-8\'\'{filename}',
-            "Cache-Control": "public, max-age=3600",
+            "Cache-Control": "no-store",
             "X-Content-Type-Options": "nosniff",
         },
     )
