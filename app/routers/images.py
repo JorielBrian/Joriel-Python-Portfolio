@@ -142,7 +142,7 @@ async def replace_image(image_id: str, file: UploadFile = File(...), db: Session
 
 
 @router.delete("/{image_id}", status_code=204,
-               dependencies=[Depends(require_admin_session)])
+               dependencies=[Depends(require_admin_session), Depends(require_admin_origin)])
 def delete_image(image_id: str, db: Session = Depends(get_db)):
     asset = db.get(models.ImageAsset, image_id)
     if not asset:
@@ -172,7 +172,7 @@ def get_bio_image_assignments(db: Session = Depends(get_db)):
 
 
 @router.put("/assignments/{section_key}", response_model=schemas.BioImageAssignmentOut | None,
-            dependencies=[Depends(require_admin_session)])
+            dependencies=[Depends(require_admin_session), Depends(require_admin_origin)])
 def set_bio_image_assignment(
     section_key: str,
     payload: schemas.BioImageAssignmentUpdate,
