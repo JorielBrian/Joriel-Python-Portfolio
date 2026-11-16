@@ -1,4 +1,4 @@
-from sqlalchemy import String, Integer, Boolean, DateTime
+from sqlalchemy import String, Integer, Boolean, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
@@ -84,4 +84,4 @@ class BioImageAssignment(Base):
     """Maps each About-page image position to an item in the shared media library."""
     __tablename__ = "bio_image_assignments"
     section_key: Mapped[str] = mapped_column(String(40), primary_key=True)
-    image_id: Mapped[str] = mapped_column(String(36), nullable=False)
+    image_id: Mapped[str] = mapped_column(ForeignKey("image_assets.id", ondelete="CASCADE"), nullable=False)
