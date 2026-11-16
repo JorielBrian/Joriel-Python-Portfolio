@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 from .. import models, schemas, storage
 from ..database import get_db
 from ..image_processing import InvalidImageError, process_image
-from ..security import require_admin_session
+from ..security import require_admin_session, require_admin_origin
 
 router = APIRouter(prefix="/images", tags=["images"])
 MAX_UPLOAD_BYTES = 8 * 1024 * 1024
@@ -65,7 +65,7 @@ def get_image_file(image_id: str, db: Session = Depends(get_db)):
 
 
 @router.post("", response_model=schemas.ImageAssetOut, status_code=201,
-             dependencies=[Depends(require_admin_session)])
+             dependencies=[Depends(require_admin_session), Depends(require_admin_origin)])
 async def upload_image(file: UploadFile = File(...), db: Session = Depends(get_db)):
     data = await file.read(MAX_UPLOAD_BYTES + 1)
     if len(data) > MAX_UPLOAD_BYTES:
@@ -108,7 +108,7 @@ async def upload_image(file: UploadFile = File(...), db: Session = Depends(get_d
 
 
 @router.put("/{image_id}", response_model=schemas.ImageAssetOut,
-            dependencies=[Depends(require_admin_session)])
+            dependencies=[Depends(require_admin_session), Depends(require_admin_origin)])
 async def replace_image(image_id: str, file: UploadFile = File(...), db: Session = Depends(get_db)):
     asset = db.get(models.ImageAsset, image_id)
     if not asset:
