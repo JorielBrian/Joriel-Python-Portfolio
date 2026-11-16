@@ -104,3 +104,26 @@ class ResumeOut(BaseModel):
     url: str
     original_filename: str
     uploaded_at: datetime
+
+
+class ImageAssetOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: str
+    slot: int
+    original_filename: str
+    content_type: str
+    size_bytes: int
+    width: int
+    height: int
+    uploaded_at: datetime
+    url: str
+
+
+class BioImageAssignmentUpdate(BaseModel):
+    image_id: str | None = None
+
+
+class BioImageAssignmentOut(BaseModel):
+    section_key: str
+    image_id: str
+    url: str
