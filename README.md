@@ -128,3 +128,17 @@ The `X-Admin-Key` header is a stopgap so the write endpoints aren't wide open
 on the public internet while there's no dashboard yet. Phase 2 replaces this
 with real session-based login for the admin dashboard.
 # Joriel-Python-Portfolio
+
+
+## Shared Bio image library
+
+The admin image library stores up to ten images in the private Neon Object Storage bucket.
+Uploads are validated and normalized to WebP before storage. The API serves public image
+URLs without exposing bucket credentials, while upload, replacement, assignment, and delete
+operations require an admin session and an allowed request origin.
+
+Configure `AWS_ENDPOINT_URL_S3`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`,
+`AWS_REGION`, and `NEON_STORAGE_BUCKET` in the backend environment. The two additive
+media tables are created idempotently when the API starts; no existing portfolio rows are
+modified. The frontend exposes the library at `/admin/images` and image assignments in
+`/admin/content`.

@@ -6,8 +6,6 @@ config.bat
 node_modules/
 
 # Environment variables and local secrets
-.env
-.env.*
 !.env.example
 *.env
 
